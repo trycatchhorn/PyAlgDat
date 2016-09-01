@@ -1,7 +1,8 @@
 BUILD STATUS
 ============
-[![Build Status](https://travis-ci.org/trycatchhorn/PyAlgDat.svg?branch=master)](https://travis-ci.org/trycatchhorn/PyAlgDat)
-============
+.. image:: https://travis-ci.org/trycatchhorn/PyAlgDat.svg?branch=master
+   :alt: Build status
+   :target: https://travis-ci.org/trycatchhorn/PyAlgDat
 
 CONTENT
 =======
