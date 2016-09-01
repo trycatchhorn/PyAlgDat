@@ -1,0 +1,49 @@
+*************************************************************************************************
+* Requirements
+*************************************************************************************************
+- Found that python 2.7.1 in Ubuntu requires:
+
+$ sudo apt-get install python-setuptools
+
+- Found that python 2.7.x in Windows 7 requires:
+
+Module setuptools to be installed - see https://pypi.python.org/pypi/setuptools 
+for details about installation.
+
+in order to run the unit-tests by 
+
+$ python setup.py test
+
+in order to create a source distribution run:
+
+$ python setup.py sdist
+
+in order to create a binary distribution run (normally if the source has C dependencies):
+
+$ python setup.py bdist
+
+in order to install the module in '/Library/Python/2.7/site-packages/py_alg_dat.egg-info' run:
+
+$ sudo python setup.py install
+
+Consider adding an "install_requires=[x, y]" entry in setup.py in order to require packages
+x and y installed to build/run py_alg_dat.
+
+*************************************************************************************************
+* Test Python 3.x compatibility
+*************************************************************************************************
+Execute:
+python -3 <python-source-file>
+
+*************************************************************************************************
+* Packaging
+*************************************************************************************************
+
+- Package creation is done by the command(s): python setup.py sdist or python setup.py bdist
+- Packaging http://guide.python-distribute.org/creation.html.
+
+*************************************************************************************************
+* Documentation
+*************************************************************************************************
+
+- Doc style is from epydoc.
