@@ -1,8 +1,8 @@
 BUILD STATUS
 ============
 [![Build Status](https://travis-ci.org/trycatchhorn/PyAlgDat.svg?branch=master)](https://travis-ci.org/trycatchhorn/PyAlgDat)
+============
 
-=======
 CONTENT
 =======
 + ABOUT PYALGDAT
