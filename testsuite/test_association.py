@@ -8,6 +8,7 @@ import unittest
 
 from py_alg_dat import association
 
+
 class TestAssociation(unittest.TestCase):
     """
     Test Association class.
@@ -41,4 +42,3 @@ class TestAssociation(unittest.TestCase):
         Test inequal operator.
         """
         self.assertNotEqual(self.assoc1, self.assoc2)
-

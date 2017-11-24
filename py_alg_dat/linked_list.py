@@ -38,6 +38,7 @@ __status__ = "Prototype"
 from abc import abstractmethod
 from py_alg_dat.linked_list_iterator import LinkedListIterator
 
+
 class LinkedList(object):
 
     """
@@ -339,13 +340,3 @@ class LinkedList(object):
         @type: C{object}
         """
         pass
-
-
-
-
-
-
-
-
-
-

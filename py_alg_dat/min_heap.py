@@ -37,6 +37,7 @@ __status__ = "Prototype"
 
 from py_alg_dat.binary_heap import BinaryHeap
 
+
 class MinHeap(BinaryHeap):
 
     """
@@ -51,7 +52,7 @@ class MinHeap(BinaryHeap):
         creates an empty min-heap.
         """
         super(MinHeap, self).__init__(start)
-        if start == None:
+        if start is None:
             start = []
         self.build_min_heap(self.array)
 
@@ -285,7 +286,7 @@ class MinHeap(BinaryHeap):
         """
         self.build_min_heap(self.array)
         output = []
-        for i in xrange(len(self.array) -1, 0, -1):
+        for i in xrange(len(self.array) - 1, 0, -1):
             self.array[0], self.array[i] = self.array[i], self.array[0]
             output.append(self.array.pop())
             self.min_heapify_recursive(self.array, 0)
@@ -360,4 +361,3 @@ class MinHeap(BinaryHeap):
         nodes = self.array + heap.array
         result = MinHeap(nodes)
         return result
-

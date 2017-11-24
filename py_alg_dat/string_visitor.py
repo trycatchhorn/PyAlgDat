@@ -37,6 +37,7 @@ __status__ = "Prototype"
 
 from py_alg_dat.visitor import Visitor
 
+
 class StringVisitor(Visitor):
     """
     Visitor that accumulates visited items in a string.

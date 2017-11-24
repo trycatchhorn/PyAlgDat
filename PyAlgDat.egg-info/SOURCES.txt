@@ -46,7 +46,6 @@ py_alg_dat/string_visitor.py
 py_alg_dat/vertex_visitor.py
 py_alg_dat/visitor.py
 testsuite/__init__.py
-testsuite/__init__.pyc
 testsuite/test_array_list.py
 testsuite/test_array_list.pyc
 testsuite/test_association.py

@@ -37,6 +37,7 @@ __maintainer__ = "Brian Horn"
 __email__ = "trycatchhorn@gmail.com"
 __status__ = "Prototype"
 
+
 class DoublyLinkedList(LinkedList):
 
     """
@@ -247,6 +248,7 @@ class DoublyLinkedList(LinkedList):
         if ptr == self.tail:
             self.tail = prev_ptr
         self.size -= 1
+
 
 class DoublyLinkedListElement(object):
 
@@ -519,5 +521,3 @@ class DoublyLinkedListElement(object):
         if self.list.tail is self:
             self.list.tail = self.prev
         del self
-
-

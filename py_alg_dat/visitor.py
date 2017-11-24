@@ -37,6 +37,7 @@ __status__ = "Prototype"
 
 from abc import abstractmethod
 
+
 class Visitor(object):
 
     """
@@ -70,4 +71,3 @@ class Visitor(object):
         @rtype: C{bool}
         """
         return False
-

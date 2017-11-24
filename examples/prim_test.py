@@ -4,6 +4,7 @@
 Test of Prims's algorithm for a UnDirected Weighted Graph.
 """
 
+
 def create_graph():
     """
     Creates an UnDirected Weighted Graph
@@ -43,6 +44,7 @@ def create_graph():
     graph.add_edge(vertex6, vertex7, 11)   # (F - G, 11)
     return graph
 
+
 if __name__ == "__main__":
     # Make it possible to use py_alg_dat without performing
     # an installation. This is needed in order to be able
@@ -67,4 +69,3 @@ if __name__ == "__main__":
     # Run Prim's algorithm
     MST = GraphAlgorithms.prims_algorithm(GRAPH, GRAPH[0])
     print MST
-

@@ -56,6 +56,7 @@ __status__ = "Prototype"
 
 from py_alg_dat.graph_edge import EdgeClassification
 
+
 class DFSEdgeClassification(object):
 
     """
@@ -374,7 +375,8 @@ class DFSEdgeClassification(object):
         """
         for vertex in self.graph.get_vertices():
             if vertex not in self.classification.parent:
-                self.dfs_visit_recursive_undirected(vertex, self.classification)
+                self.dfs_visit_recursive_undirected(
+                    vertex, self.classification)
         return self.classification
 
     def dfs_visit_recursive_undirected(self, vertex_u, results, parent=None):
@@ -421,12 +423,14 @@ class DFSEdgeClassification(object):
 
             if not edge_u_v in results.edges and not edge_v_u in results.edges:
                 if vertex_v not in results.parent:
-                    self.dfs_visit_recursive_undirected(vertex_v, results, vertex_u)
+                    self.dfs_visit_recursive_undirected(
+                        vertex_v, results, vertex_u)
                 elif vertex_v not in results.finishing_time:
                     results.edges[edge_u_v] = EdgeClassification.BACK_EDGE
         results.time += 1
         results.finishing_time[vertex_u] = results.time
         results.order.append(vertex_u)
+
 
 class DFSResult(object):
 
@@ -686,5 +690,3 @@ class DFSResult(object):
         @rtype: C{bool}
         """
         return self.get_number_of_cross_edges() > 0
-
-

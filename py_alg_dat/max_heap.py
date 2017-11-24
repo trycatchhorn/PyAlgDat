@@ -37,6 +37,7 @@ __status__ = "Prototype"
 
 from py_alg_dat.binary_heap import BinaryHeap
 
+
 class MaxHeap(BinaryHeap):
 
     """
@@ -51,7 +52,7 @@ class MaxHeap(BinaryHeap):
         creates an empty max-heap.
         """
         super(MaxHeap, self).__init__(start)
-        if start == None:
+        if start is None:
             start = []
         self.build_max_heap(self.array)
 
@@ -378,7 +379,7 @@ class MaxHeap(BinaryHeap):
         """
         self.build_max_heap(self.array)
         output = []
-        for i in xrange(len(self.array) -1, 0, -1):
+        for i in xrange(len(self.array) - 1, 0, -1):
             self.array[0], self.array[i] = self.array[i], self.array[0]
             output.append(self.array.pop())
             self.max_heapify_recursive(self.array, 0)
@@ -419,7 +420,8 @@ class MaxHeap(BinaryHeap):
             return
         self.array[i] = key
         while i > 0 and self.array[self.parent(i)] < self.array[i]:
-            self.array[i], self.array[self.parent(i)] = self.array[self.parent(i)], self.array[i]
+            self.array[i], self.array[self.parent(
+                i)] = self.array[self.parent(i)], self.array[i]
             i = self.parent(i)
 
     def increment(self, key, value):
@@ -453,5 +455,3 @@ class MaxHeap(BinaryHeap):
         nodes = self.array + heap.array
         result = MaxHeap(nodes)
         return result
-
-

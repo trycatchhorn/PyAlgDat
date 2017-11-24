@@ -38,6 +38,7 @@ __maintainer__ = "Brian Horn"
 __email__ = "trycatchhorn@gmail.com"
 __status__ = "Prototype"
 
+
 class GraphPath(object):
 
     """
@@ -179,8 +180,3 @@ class GraphPath(object):
         if self.graph.has_edge(edge):
             self.edges.insert(0, edge)
             self.path_length += edge.get_weight()
-
-
-
-
-

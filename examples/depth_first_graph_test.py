@@ -4,6 +4,7 @@
 Test of Depth First traversal in an UnDirected Weighted Graph.
 """
 
+
 def create_graph():
     """
     Creates an UnDirected Weighted Graph
@@ -39,6 +40,7 @@ def create_graph():
     graph.add_edge(vertex6, vertex7, 11)
     return graph
 
+
 if __name__ == "__main__":
     # Make it possible to use py_alg_dat without performing
     # an installation. This is needed in order to be able
@@ -66,4 +68,3 @@ if __name__ == "__main__":
     GRAPH.depth_first_traversal(VISITOR, 0)
     # Show result
     print str("Depth First traversal: ") + str(VISITOR.get_visited())
-

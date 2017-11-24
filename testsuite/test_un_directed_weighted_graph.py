@@ -12,6 +12,7 @@ from py_alg_dat import graph_edge
 from py_alg_dat import graph_vertex
 from py_alg_dat import vertex_visitor
 
+
 class TestUnDirectedWeightedGraph(unittest.TestCase):
 
     """
@@ -37,28 +38,50 @@ class TestUnDirectedWeightedGraph(unittest.TestCase):
         self.g_1.add_vertex(self.v_6)
         self.g_1.add_vertex(self.v_7)
 
-        self.e12 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_1, self.v_2, 7)
-        self.e21 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_2, self.v_1, 7)
-        self.e14 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_1, self.v_4, 5)
-        self.e41 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_4, self.v_1, 5)
-        self.e23 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_2, self.v_3, 8)
-        self.e32 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_3, self.v_2, 8)
-        self.e24 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_2, self.v_4, 9)
-        self.e42 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_4, self.v_2, 9)
-        self.e25 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_2, self.v_5, 7)
-        self.e52 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_5, self.v_2, 7)
-        self.e35 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_3, self.v_5, 5)
-        self.e53 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_5, self.v_3, 5)
-        self.e45 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_4, self.v_5, 15)
-        self.e54 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_5, self.v_4, 15)
-        self.e46 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_4, self.v_6, 6)
-        self.e64 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_6, self.v_4, 6)
-        self.e56 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_5, self.v_6, 8)
-        self.e65 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_6, self.v_5, 8)
-        self.e57 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_5, self.v_7, 9)
-        self.e75 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_7, self.v_5, 9)
-        self.e67 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_6, self.v_7, 11)
-        self.e76 = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, self.v_7, self.v_6, 11)
+        self.e12 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_1, self.v_2, 7)
+        self.e21 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_2, self.v_1, 7)
+        self.e14 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_1, self.v_4, 5)
+        self.e41 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_4, self.v_1, 5)
+        self.e23 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_2, self.v_3, 8)
+        self.e32 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_3, self.v_2, 8)
+        self.e24 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_2, self.v_4, 9)
+        self.e42 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_4, self.v_2, 9)
+        self.e25 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_2, self.v_5, 7)
+        self.e52 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_5, self.v_2, 7)
+        self.e35 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_3, self.v_5, 5)
+        self.e53 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_5, self.v_3, 5)
+        self.e45 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_4, self.v_5, 15)
+        self.e54 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_5, self.v_4, 15)
+        self.e46 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_4, self.v_6, 6)
+        self.e64 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_6, self.v_4, 6)
+        self.e56 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_5, self.v_6, 8)
+        self.e65 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_6, self.v_5, 8)
+        self.e57 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_5, self.v_7, 9)
+        self.e75 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_7, self.v_5, 9)
+        self.e67 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_6, self.v_7, 11)
+        self.e76 = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, self.v_7, self.v_6, 11)
 
         self.g_1.add_edge(self.v_1, self.v_2, 7)
         self.g_1.add_edge(self.v_1, self.v_4, 5)
@@ -119,8 +142,10 @@ class TestUnDirectedWeightedGraph(unittest.TestCase):
         for i in self.g_1.get_vertices():
             list2.append(i)
 
-        s_list1 = sorted(list1, key=lambda vertex: (vertex.vertex_name, vertex.vertex_number))
-        s_list2 = sorted(list2, key=lambda vertex: (vertex.vertex_name, vertex.vertex_number))
+        s_list1 = sorted(list1, key=lambda vertex: (
+            vertex.vertex_name, vertex.vertex_number))
+        s_list2 = sorted(list2, key=lambda vertex: (
+            vertex.vertex_name, vertex.vertex_number))
         self.assertEqual(s_list1, s_list2)
 
     def test_un_directed_weighted_graph_get_edges(self):
@@ -155,8 +180,10 @@ class TestUnDirectedWeightedGraph(unittest.TestCase):
         for i in self.g_1.get_edges():
             list2.append(i)
 
-        s_list1 = sorted(list1, key=lambda edge: (edge.head_vertex, edge.tail_vertex, edge.weight))
-        s_list2 = sorted(list2, key=lambda edge: (edge.head_vertex, edge.tail_vertex, edge.weight))
+        s_list1 = sorted(list1, key=lambda edge: (
+            edge.head_vertex, edge.tail_vertex, edge.weight))
+        s_list2 = sorted(list2, key=lambda edge: (
+            edge.head_vertex, edge.tail_vertex, edge.weight))
         self.assertEqual(s_list1, s_list2)
 
     def test_un_directed_weighted_graph_copy(self):
@@ -214,7 +241,8 @@ class TestUnDirectedWeightedGraph(unittest.TestCase):
         vertex_b = graph_vertex.UnWeightedGraphVertex(a_graph, 'B')
         a_graph.add_vertex(vertex_a)
         a_graph.add_vertex(vertex_b)
-        a_edge = graph_edge.UnDirectedWeightedGraphEdge(a_graph, vertex_a, vertex_b, 7)
+        a_edge = graph_edge.UnDirectedWeightedGraphEdge(
+            a_graph, vertex_a, vertex_b, 7)
         a_graph.add_edge(vertex_a, vertex_b, 7)
         self.assertTrue(a_graph.has_edge(a_edge))
 
@@ -224,7 +252,8 @@ class TestUnDirectedWeightedGraph(unittest.TestCase):
         """
         vertex_a = graph_vertex.UnWeightedGraphVertex(self.g_1, 'X')
         vertex_b = graph_vertex.UnWeightedGraphVertex(self.g_1, 'Y')
-        a_edge = graph_edge.UnDirectedWeightedGraphEdge(self.g_1, vertex_a, vertex_b, 7)
+        a_edge = graph_edge.UnDirectedWeightedGraphEdge(
+            self.g_1, vertex_a, vertex_b, 7)
         self.assertFalse(self.g_1.has_edge(a_edge))
 
     def test_un_directed_weighted_graph_get_edge(self):
@@ -723,7 +752,8 @@ class TestUnDirectedWeightedGraph(unittest.TestCase):
         a_graph.add_edge(v_1, v_3, 30)
 
         res = a_graph.classify_edges().get_edges()
-        ref = dfs_edge_classification.DFSEdgeClassification(a_graph).get_edges()
+        ref = dfs_edge_classification.DFSEdgeClassification(
+            a_graph).get_edges()
         e12 = graph_edge.UnDirectedWeightedGraphEdge(a_graph, v_1, v_2, 10)
         e23 = graph_edge.UnDirectedWeightedGraphEdge(a_graph, v_2, v_3, 20)
         e13 = graph_edge.UnDirectedWeightedGraphEdge(a_graph, v_3, v_1, 30)
@@ -753,7 +783,8 @@ class TestUnDirectedWeightedGraph(unittest.TestCase):
         a_graph.add_edge(v_2, v_4, 30)
 
         res = a_graph.classify_edges().get_edges()
-        ref = dfs_edge_classification.DFSEdgeClassification(a_graph).get_edges()
+        ref = dfs_edge_classification.DFSEdgeClassification(
+            a_graph).get_edges()
         e12 = graph_edge.UnDirectedWeightedGraphEdge(a_graph, v_1, v_2, 10)
         e23 = graph_edge.UnDirectedWeightedGraphEdge(a_graph, v_2, v_3, 20)
         e24 = graph_edge.UnDirectedWeightedGraphEdge(a_graph, v_2, v_4, 30)
@@ -761,6 +792,3 @@ class TestUnDirectedWeightedGraph(unittest.TestCase):
         ref[e23] = graph_edge.EdgeClassification.TREE_EDGE
         ref[e24] = graph_edge.EdgeClassification.TREE_EDGE
         self.assertEqual(res, ref)
-
-
-

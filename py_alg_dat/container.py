@@ -37,6 +37,7 @@ __maintainer__ = "Brian Horn"
 __email__ = "trycatchhorn@gmail.com"
 __status__ = "Prototype"
 
+
 class Container(object):
 
     """
@@ -118,4 +119,3 @@ class Container(object):
         """
         for obj in self:
             yield obj
-

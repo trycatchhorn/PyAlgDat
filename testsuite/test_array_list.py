@@ -137,7 +137,7 @@ class TestArrayList(unittest.TestCase):
 
     def test_array_list_remove_at_2(self):
         """
-        Test of remove at methhod (association).
+        Test of remove at method (association).
         """
         array = array_list.ArrayList(5)
         s_list1 = singly_linked_list.SinglyLinkedList()

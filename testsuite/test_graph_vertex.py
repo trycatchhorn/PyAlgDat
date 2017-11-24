@@ -10,8 +10,8 @@ from py_alg_dat import graph
 from py_alg_dat import graph_edge
 from py_alg_dat import graph_vertex
 
-class TestGraphVertex(unittest.TestCase):
 
+class TestGraphVertex(unittest.TestCase):
 
     """
     Test GraphVertex class.
@@ -33,16 +33,26 @@ class TestGraphVertex(unittest.TestCase):
         self.graph1.add_vertex(self.v4_g1)
         self.graph1.add_vertex(self.v5_g1)
 
-        self.e12 = graph_edge.DirectedGraphEdge(self.graph1, self.v1_g1, self.v2_g1) # S -> T
-        self.e14 = graph_edge.DirectedGraphEdge(self.graph1, self.v1_g1, self.v4_g1) # S -> Y
-        self.e23 = graph_edge.DirectedGraphEdge(self.graph1, self.v2_g1, self.v3_g1) # T -> X
-        self.e24 = graph_edge.DirectedGraphEdge(self.graph1, self.v2_g1, self.v4_g1) # T -> Y
-        self.e35 = graph_edge.DirectedGraphEdge(self.graph1, self.v3_g1, self.v5_g1) # X -> Z
-        self.e42 = graph_edge.DirectedGraphEdge(self.graph1, self.v4_g1, self.v2_g1) # Y -> T
-        self.e43 = graph_edge.DirectedGraphEdge(self.graph1, self.v4_g1, self.v3_g1) # Y -> X
-        self.e45 = graph_edge.DirectedGraphEdge(self.graph1, self.v4_g1, self.v5_g1) # Y -> Z
-        self.e53 = graph_edge.DirectedGraphEdge(self.graph1, self.v5_g1, self.v3_g1) # Z -> X
-        self.e51 = graph_edge.DirectedGraphEdge(self.graph1, self.v5_g1, self.v1_g1) # Z -> S
+        self.e12 = graph_edge.DirectedGraphEdge(
+            self.graph1, self.v1_g1, self.v2_g1)  # S -> T
+        self.e14 = graph_edge.DirectedGraphEdge(
+            self.graph1, self.v1_g1, self.v4_g1)  # S -> Y
+        self.e23 = graph_edge.DirectedGraphEdge(
+            self.graph1, self.v2_g1, self.v3_g1)  # T -> X
+        self.e24 = graph_edge.DirectedGraphEdge(
+            self.graph1, self.v2_g1, self.v4_g1)  # T -> Y
+        self.e35 = graph_edge.DirectedGraphEdge(
+            self.graph1, self.v3_g1, self.v5_g1)  # X -> Z
+        self.e42 = graph_edge.DirectedGraphEdge(
+            self.graph1, self.v4_g1, self.v2_g1)  # Y -> T
+        self.e43 = graph_edge.DirectedGraphEdge(
+            self.graph1, self.v4_g1, self.v3_g1)  # Y -> X
+        self.e45 = graph_edge.DirectedGraphEdge(
+            self.graph1, self.v4_g1, self.v5_g1)  # Y -> Z
+        self.e53 = graph_edge.DirectedGraphEdge(
+            self.graph1, self.v5_g1, self.v3_g1)  # Z -> X
+        self.e51 = graph_edge.DirectedGraphEdge(
+            self.graph1, self.v5_g1, self.v1_g1)  # Z -> S
 
         self.graph1.add_edge(self.v1_g1, self.v2_g1)
         self.graph1.add_edge(self.v1_g1, self.v4_g1)
@@ -199,4 +209,3 @@ class TestGraphVertex(unittest.TestCase):
         ref.append(self.v4_g1)
         res = self.v5_g1.get_predecessors()
         self.assertEqual(ref, res)
-

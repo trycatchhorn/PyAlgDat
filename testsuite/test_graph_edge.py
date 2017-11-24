@@ -9,6 +9,7 @@ import unittest
 from py_alg_dat import graph
 from py_alg_dat import graph_vertex
 
+
 class TestGraphEdge(unittest.TestCase):
 
     """

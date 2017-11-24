@@ -8,6 +8,7 @@ import unittest
 
 from py_alg_dat import entry
 
+
 class TestEntry(unittest.TestCase):
 
     """
@@ -76,6 +77,6 @@ class TestEntry(unittest.TestCase):
 
         ref = [elem2, elem3, elem1]
         rsorted = [elem1, elem2, elem3]
-        rsorted = sorted(rsorted, key=lambda e: (e.discovered, e.distance, e.predecessor))
+        rsorted = sorted(rsorted, key=lambda e: (
+            e.discovered, e.distance, e.predecessor))
         self.assertEqual(ref, rsorted)
-

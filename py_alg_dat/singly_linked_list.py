@@ -37,6 +37,7 @@ __status__ = "Prototype"
 
 from py_alg_dat.linked_list import LinkedList
 
+
 class SinglyLinkedList(LinkedList):
 
     """
@@ -223,6 +224,7 @@ class SinglyLinkedList(LinkedList):
         tmp = SinglyLinkedListElement(self, item, None)
         tmp.remove()
 
+
 class SinglyLinkedListElement(object):
 
     """
@@ -398,7 +400,7 @@ class SinglyLinkedListElement(object):
         """
         new_element = SinglyLinkedListElement(self.list, item, self.next)
         # The singly linked list is empty
-        if self.list.head == None:
+        if self.list.head is None:
             self.list.head = new_element
             self.list.tail = new_element
             self.list.size += 1
@@ -439,7 +441,7 @@ class SinglyLinkedListElement(object):
         # Insertion happens before the first element
         if self == current_element:
             # This is the case where there is only one element in the list
-            if current_element.next == None:
+            if current_element.next is None:
                 self.list.head = new_element
                 self.list.head.next = current_element
                 self.list.tail = self.list.head.next
@@ -452,7 +454,7 @@ class SinglyLinkedListElement(object):
             return
 
         while True:
-            if current_element == None:
+            if current_element is None:
                 was_inserted = False
                 break
             # Check if it is the next element we are looking for
@@ -486,7 +488,7 @@ class SinglyLinkedListElement(object):
         # Insertion happens after the first element
         if self == current_element:
             # This is the case where there is only one element in the list
-            if current_element.next == None:
+            if current_element.next is None:
                 current_element.next = new_element
                 self.next = new_element
                 self.list.tail = current_element.next
@@ -499,7 +501,7 @@ class SinglyLinkedListElement(object):
             return
 
         while True:
-            if current_element == None:
+            if current_element is None:
                 was_inserted = False
                 break
             # Check if it is the next element we are looking for
@@ -524,7 +526,7 @@ class SinglyLinkedListElement(object):
         # The first element is being removed
         if self == current_element:
             # This is the case where there is only one element in the list
-            if current_element.next == None:
+            if current_element.next is None:
                 self.list.head = None
                 self.list.tail = self.list.head
                 self.list.size -= 1
@@ -536,7 +538,7 @@ class SinglyLinkedListElement(object):
             return
 
         while True:
-            if current_element == None:
+            if current_element is None:
                 was_removed = False
                 break
             # Check if it is the next element we are looking for
@@ -554,5 +556,3 @@ class SinglyLinkedListElement(object):
             current_element = current_element.next
         if was_removed:
             self.list.size -= 1
-
-

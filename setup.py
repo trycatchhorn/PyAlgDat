@@ -69,7 +69,8 @@ CLASSIFIERS = ['Development Status :: 3 - Alpha',
                'Topic :: Software Development :: Libraries :: Python Modules']
 DESCRIPTION = "Various data structures and algorithms."
 DOWNLOAD_URL = "http://www.brianhorn.dk/projects/pyalgdat/release/PyAlgDat-1.0.2.tar.gz"
-KEYWORDS = ['algorithms', 'data structures', 'graph', 'heap', 'linked list', 'partition']
+KEYWORDS = ['algorithms', 'data structures',
+            'graph', 'heap', 'linked list', 'partition']
 LICENSE = MIT_LICENSE
 LONG_DESCRIPTION = README + '\n\n' + CHANGES
 PACKAGE_NAME = "PyAlgDat"

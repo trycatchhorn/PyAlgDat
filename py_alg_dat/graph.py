@@ -56,6 +56,7 @@ from py_alg_dat.stack import Stack
 from py_alg_dat.visitor import Visitor
 from py_alg_dat.vertex_visitor import VertexVisitor
 
+
 class Graph(Container):
 
     """
@@ -250,7 +251,8 @@ class Graph(Container):
         """
         for edge in self.get_edges():
             if edge.get_head_vertex() == vertex or edge.get_tail_vertex() == vertex:
-                self.remove_edge(edge.get_head_vertex(), edge.get_tail_vertex())
+                self.remove_edge(edge.get_head_vertex(),
+                                 edge.get_tail_vertex())
         # Remove the specified vertex from the list of vertices.
         del self.vertices[vertex.get_vertex_number()]
         # Remove the specified vertex from the adjacency list.
@@ -284,12 +286,13 @@ class Graph(Container):
                 adj_v_copy = copy.copy(adj_v)
                 adj_v_copy.remove(edge_vu)
                 if len(adj_v_copy) == len(adj_v) - 1:
-                    self.adjacency_list[vertex_v.get_vertex_number()] = adj_v_copy
+                    self.adjacency_list[vertex_v.get_vertex_number(
+                    )] = adj_v_copy
         except KeyError:
             return
 
     @abstractmethod
-    def  __copy__(self):
+    def __copy__(self):
         """
         Returns a shallow copy of this graph.
 
@@ -650,6 +653,7 @@ class Graph(Container):
         else:
             return DFSEdgeClassification(self).dfs_recursive_undirected()
 
+
 class DirectedGraph(Graph):
 
     """
@@ -795,7 +799,9 @@ class DirectedGraph(Graph):
         @type: L{DirecteGraphEdge}
         """
         head_vertex_index = u.get_vertex_number()
-        self.adjacency_list[head_vertex_index].append(DirectedGraphEdge(self, u, v))
+        self.adjacency_list[head_vertex_index].append(
+            DirectedGraphEdge(self, u, v))
+
 
 class DirectedUnWeightedGraph(DirectedGraph):
 
@@ -874,7 +880,9 @@ class DirectedUnWeightedGraph(DirectedGraph):
         @type: L{DirecteUnWeightedGraphEdge}
         """
         head_vertex_index = u.get_vertex_number()
-        self.adjacency_list[head_vertex_index].append(DirectedUnWeightedGraphEdge(self, u, v))
+        self.adjacency_list[head_vertex_index].append(
+            DirectedUnWeightedGraphEdge(self, u, v))
+
 
 class DirectedWeightedGraph(DirectedGraph):
 
@@ -955,7 +963,9 @@ class DirectedWeightedGraph(DirectedGraph):
         @type: C{int}
         """
         head_vertex_index = u.get_vertex_number()
-        self.adjacency_list[head_vertex_index].append(DirectedWeightedGraphEdge(self, u, v, weight))
+        self.adjacency_list[head_vertex_index].append(
+            DirectedWeightedGraphEdge(self, u, v, weight))
+
 
 class UnDirectedGraph(Graph):
 
@@ -1079,8 +1089,11 @@ class UnDirectedGraph(Graph):
         """
         head_vertex_index = u.get_vertex_number()
         tail_vertex_index = v.get_vertex_number()
-        self.adjacency_list[head_vertex_index].append(UnDirectedGraphEdge(self, u, v))
-        self.adjacency_list[tail_vertex_index].append(UnDirectedGraphEdge(self, v, u))
+        self.adjacency_list[head_vertex_index].append(
+            UnDirectedGraphEdge(self, u, v))
+        self.adjacency_list[tail_vertex_index].append(
+            UnDirectedGraphEdge(self, v, u))
+
 
 class UnDirectedUnWeightedGraph(UnDirectedGraph):
 
@@ -1161,8 +1174,11 @@ class UnDirectedUnWeightedGraph(UnDirectedGraph):
         """
         head_vertex_index = u.get_vertex_number()
         tail_vertex_index = v.get_vertex_number()
-        self.adjacency_list[head_vertex_index].append(UnDirectedUnWeightedGraphEdge(self, u, v))
-        self.adjacency_list[tail_vertex_index].append(UnDirectedUnWeightedGraphEdge(self, v, u))
+        self.adjacency_list[head_vertex_index].append(
+            UnDirectedUnWeightedGraphEdge(self, u, v))
+        self.adjacency_list[tail_vertex_index].append(
+            UnDirectedUnWeightedGraphEdge(self, v, u))
+
 
 class UnDirectedWeightedGraph(UnDirectedGraph):
 
@@ -1248,5 +1264,3 @@ class UnDirectedWeightedGraph(UnDirectedGraph):
         edge_vu = UnDirectedWeightedGraphEdge(self, v, u, weight)
         self.adjacency_list[head_vertex_index].append(edge_uv)
         self.adjacency_list[tail_vertex_index].append(edge_vu)
-
-

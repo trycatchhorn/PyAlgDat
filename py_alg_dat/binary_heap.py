@@ -35,6 +35,7 @@ __maintainer__ = "Brian Horn"
 __email__ = "trycatchhorn@gmail.com"
 __status__ = "Prototype"
 
+
 class BinaryHeap(object):
 
     """
@@ -187,4 +188,3 @@ class BinaryHeap(object):
             return
         else:
             self.array[index_a], self.array[index_b] = self.array[index_b], self.array[index_a]
-

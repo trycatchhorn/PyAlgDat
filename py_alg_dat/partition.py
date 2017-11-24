@@ -36,6 +36,7 @@ __maintainer__ = "Brian Horn"
 __email__ = "trycatchhorn@gmail.com"
 __status__ = "Prototype"
 
+
 class Partition(object):
 
     """
@@ -57,7 +58,7 @@ class Partition(object):
         @type: C{list}
         """
         self.elems = {}
-        if start == None:
+        if start is None:
             start = []
         for elem in start:
             self.make_set(elem)
@@ -200,7 +201,7 @@ class Partition(object):
         one_link = self.elems.get(self.find(elem1))
         two_link = self.elems.get(self.find(elem2))
 
-        if one_link == two_link or one_link == None or two_link == None:
+        if one_link == two_link or one_link is None or two_link is None:
             return None
         if one_link.rank > two_link.rank:
             two_link.parent = one_link.parent
@@ -227,7 +228,7 @@ class Partition(object):
         one_link = self.elems.get(self.find_element_recursive(elem_x))
         two_link = self.elems.get(self.find_element_recursive(elem_y))
 
-        if one_link == two_link or one_link == None or two_link == None:
+        if one_link == two_link or one_link is None or two_link is None:
             return None
         if one_link.rank > two_link.rank:
             two_link.parent = one_link.parent
@@ -254,7 +255,7 @@ class Partition(object):
         one_link = self.elems.get(self.find_element_iterative(elem_x))
         two_link = self.elems.get(self.find_element_iterative(elem_y))
 
-        if one_link == two_link or one_link == None or two_link == None:
+        if one_link == two_link or one_link is None or two_link is None:
             return None
         if one_link.rank > two_link.rank:
             two_link.parent = one_link.parent
@@ -263,6 +264,7 @@ class Partition(object):
         else:
             two_link.parent = one_link.parent
             one_link.rank += 1
+
 
 class PartitionElement(object):
 

@@ -1,2 +1,4 @@
 py_alg_dat/*.pyc
 testsuite/*.pyc
+.vscode/launch.json
+.vscode/settings.json

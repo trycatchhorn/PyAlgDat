@@ -35,6 +35,7 @@ __maintainer__ = "Brian Horn"
 __email__ = "trycatchhorn@gmail.com"
 __status__ = "Prototype"
 
+
 class Stack(object):
 
     """
@@ -52,7 +53,7 @@ class Stack(object):
         @type: C{list}
         """
         self.holder = []
-        if start == None:
+        if start is None:
             start = []
         for elem in start:
             self.push(elem)

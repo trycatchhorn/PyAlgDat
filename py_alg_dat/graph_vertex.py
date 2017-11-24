@@ -35,6 +35,7 @@ __maintainer__ = "Brian Horn"
 __email__ = "trycatchhorn@gmail.com"
 __status__ = "Prototype"
 
+
 class GraphVertex(object):
 
     """
@@ -75,7 +76,8 @@ class GraphVertex(object):
         @rtype: C{str}
         """
         class_name_str = str(self.__class__.__name__) + ": ("
-        attributes_str = str(self.vertex_name) + ", " + str(self.vertex_number) + ")"
+        attributes_str = str(self.vertex_name) + ", " + \
+            str(self.vertex_number) + ")"
         str_rep = class_name_str + attributes_str
         return str_rep
 
@@ -240,6 +242,7 @@ class GraphVertex(object):
         """
         return list(self.successor_generator())
 
+
 class UnWeightedGraphVertex(GraphVertex):
 
     """
@@ -274,7 +277,8 @@ class UnWeightedGraphVertex(GraphVertex):
         @rtype: C{str}
         """
         class_name_str = str(self.__class__.__name__) + ": ("
-        attributes_str = str(self.vertex_name) + ", " + str(self.vertex_number) + ")"
+        attributes_str = str(self.vertex_name) + ", " + \
+            str(self.vertex_number) + ")"
         str_rep = class_name_str + attributes_str
         return str_rep
 

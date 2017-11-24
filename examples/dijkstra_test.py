@@ -4,6 +4,7 @@
 Test of Dijkstra's algorithm for a Directed Weighted Graph.
 """
 
+
 def create_graph():
     """
     Creates a Directed Weighted Graph
@@ -95,4 +96,3 @@ if __name__ == "__main__":
             SPANNING_TREE_WEIGHT += edge.get_weight()
     print "Edges in Spanning Tree: " + str(SPANNING_TREE_EDGES)
     print "Weight of Spanning Tree: " + str(SPANNING_TREE_WEIGHT)
-

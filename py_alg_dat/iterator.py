@@ -37,6 +37,7 @@ __status__ = "Prototype"
 
 from abc import abstractmethod
 
+
 class Iterator(object):
 
     """

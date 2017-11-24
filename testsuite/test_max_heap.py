@@ -35,7 +35,7 @@ class TestMaxHeap(unittest.TestCase):
         res = max_heap.MaxHeap()
         self.assertEqual(ref, res.array)
 
-    def test_build_max_heap_recurxsive(self):
+    def test_build_max_heap_recursive(self):
         """
         Test constructor "MaxHeap" - recursive.
         """

@@ -37,6 +37,7 @@ __maintainer__ = "Brian Horn"
 __email__ = "trycatchhorn@gmail.com"
 __status__ = "Prototype"
 
+
 class Entry(object):
 
     """
@@ -90,7 +91,8 @@ class Entry(object):
         @return: The hash of the entry.
         @rtype: C{int}
         """
-        key = hash(self.discovered) + hash(self.distance) + hash(self.predecessor) + hash(self.edge)
+        key = hash(self.discovered) + hash(self.distance) + \
+            hash(self.predecessor) + hash(self.edge)
         return key
 
     def __eq__(self, other):
@@ -238,4 +240,3 @@ class Entry(object):
         @rtype: L{GraphEdge}
         """
         return self.edge
-

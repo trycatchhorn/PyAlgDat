@@ -9,6 +9,7 @@ import unittest
 
 from py_alg_dat import doubly_linked_list
 
+
 class TestDoublyLinkedList(unittest.TestCase):
 
     """
@@ -37,8 +38,10 @@ class TestDoublyLinkedList(unittest.TestCase):
         Test operator "equal".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem1 = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, None)
-        elem2 = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, None)
+        elem1 = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, None)
+        elem2 = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, None)
         self.assertEqual(elem1, elem2)
 
     def test_doubly_linked_list_element_not_equal(self):
@@ -46,8 +49,10 @@ class TestDoublyLinkedList(unittest.TestCase):
         Test operator "inequal".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem1 = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, None)
-        elem2 = doubly_linked_list.DoublyLinkedListElement(a_list, 'b', None, None)
+        elem1 = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, None)
+        elem2 = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'b', None, None)
         self.assertNotEqual(elem1, elem2)
 
     def test_doubly_linked_list_element_copy_equal(self):
@@ -55,7 +60,8 @@ class TestDoublyLinkedList(unittest.TestCase):
         Test operator "copy".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, None)
+        elem = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, None)
         e_copy = copy.copy(elem)
         self.assertEqual(elem, e_copy)
 
@@ -64,7 +70,8 @@ class TestDoublyLinkedList(unittest.TestCase):
         Test operator "copy".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, None)
+        elem = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, None)
         e_copy = copy.copy(elem)
         elem.data = 'aa'
         self.assertNotEqual(elem, e_copy)
@@ -74,7 +81,8 @@ class TestDoublyLinkedList(unittest.TestCase):
         Test method "get_data".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, None)
+        elem = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, None)
         self.assertEqual('a', elem.get_data())
 
     def test_doubly_linked_list_element_get_previous(self):
@@ -82,8 +90,10 @@ class TestDoublyLinkedList(unittest.TestCase):
         Test method "get_previous".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem1 = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, None)
-        elem2 = doubly_linked_list.DoublyLinkedListElement(a_list, 'b', elem1, None)
+        elem1 = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, None)
+        elem2 = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'b', elem1, None)
         self.assertEqual(elem1, elem2.get_previous())
 
     def test_doubly_linked_list_element_get_next(self):
@@ -91,8 +101,10 @@ class TestDoublyLinkedList(unittest.TestCase):
         Test method "get_next".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem2 = doubly_linked_list.DoublyLinkedListElement(a_list, 'b', None, None)
-        elem1 = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, elem2)
+        elem2 = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'b', None, None)
+        elem1 = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, elem2)
         self.assertEqual(elem2, elem1.get_next())
 
     def test_doubly_linked_list_element_insert_at(self):
@@ -100,7 +112,8 @@ class TestDoublyLinkedList(unittest.TestCase):
         Test method "insert_at".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem1 = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, None)
+        elem1 = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, None)
         elem1.insert_after('b')
         elem2 = elem1.get_next()
         elem2.insert_after('c')
@@ -110,14 +123,16 @@ class TestDoublyLinkedList(unittest.TestCase):
         elem4.insert_after('e')
         elem5 = elem4.get_next()
         elem5.insert("test")
-        self.assertEqual('test', elem1.get_next().get_next().get_next().get_next().get_data())
+        self.assertEqual('test', elem1.get_next(
+        ).get_next().get_next().get_next().get_data())
 
     def test_doubly_linked_list_element_insert_before(self):
         """
         Test method "insert_before".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem = doubly_linked_list.DoublyLinkedListElement(a_list, 'b', None, None)
+        elem = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'b', None, None)
         elem.insert_before('a')
         self.assertEqual('a', elem.get_previous().get_data())
 
@@ -126,7 +141,8 @@ class TestDoublyLinkedList(unittest.TestCase):
         Test method "insert_between".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem1 = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, None)
+        elem1 = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, None)
         elem1.insert_after('c')
         elem2 = elem1.get_next()
         elem1.insert_between('b', elem2)
@@ -137,7 +153,8 @@ class TestDoublyLinkedList(unittest.TestCase):
         Test method "insert_after".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, None)
+        elem = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, None)
         elem.insert_after('b')
         self.assertEqual('b', elem.get_next().get_data())
 
@@ -146,7 +163,8 @@ class TestDoublyLinkedList(unittest.TestCase):
         Test method "remove".
         """
         a_list = doubly_linked_list.DoublyLinkedList()
-        elem1 = doubly_linked_list.DoublyLinkedListElement(a_list, 'a', None, None)
+        elem1 = doubly_linked_list.DoublyLinkedListElement(
+            a_list, 'a', None, None)
         elem1.insert_after('b')
         elem2 = elem1.get_next()
         elem2.insert_after('c')
@@ -183,7 +201,8 @@ class TestDoublyLinkedList(unittest.TestCase):
         """
         Test operator "get_item".
         """
-        elem = doubly_linked_list.DoublyLinkedListElement(self.list1, 'a', None, None)
+        elem = doubly_linked_list.DoublyLinkedListElement(
+            self.list1, 'a', None, None)
         self.assertEqual(elem, self.list1[0])
 
     def test_doubly_linked_list_get_item_raise(self):
@@ -245,7 +264,8 @@ class TestDoublyLinkedList(unittest.TestCase):
         a_list.append('a')
         a_list.append('b')
         a_list.clear()
-        self.assertTrue(a_list.get_head() == None and a_list.get_tail() == None and len(a_list) == 0)
+        self.assertTrue(a_list.get_head() is
+                        None and a_list.get_tail() is None and len(a_list) == 0)
 
     def test_doubly_linked_list_append(self):
         """
@@ -281,7 +301,7 @@ class TestDoublyLinkedList(unittest.TestCase):
         elem0 = a_list[0].get_data()
         elem1 = a_list[1].get_data()
         elem2 = a_list[2].get_data()
-        self.assertTrue('aa' == elem0 and 'bb' == elem1 and 'cc' == elem2)
+        self.assertTrue(elem0 == 'aa' and elem1 == 'bb' and elem2 == 'cc')
 
     def test_doubly_linked_list_insert_before_element(self):
         """

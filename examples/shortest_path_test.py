@@ -4,6 +4,7 @@
 Test of shortest path algorithm for a Directed Weighted Graph.
 """
 
+
 def create_graph():
     """
     Creates a Directed Weighted Graph
@@ -86,4 +87,3 @@ if __name__ == "__main__":
     PATH = GraphAlgorithms.shortest_path(GRAPH, GRAPH[0], GRAPH[5])
     # Find the edges in the Spanning Tree and its total weight
     print PATH
-

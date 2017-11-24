@@ -35,6 +35,7 @@ __maintainer__ = "Brian Horn"
 __email__ = "trycatchhorn@gmail.com"
 __status__ = "Prototype"
 
+
 class GraphEdge(object):
 
     """
@@ -74,7 +75,8 @@ class GraphEdge(object):
         @rtype: C{str}
         """
         class_name_str = str(self.__class__.__name__) + ": ("
-        attributes_str = str(self.head_vertex) + ", " + str(self.tail_vertex) + ")"
+        attributes_str = str(self.head_vertex) + ", " + \
+            str(self.tail_vertex) + ")"
         str_rep = class_name_str + attributes_str
         return str_rep
 
@@ -196,6 +198,7 @@ class GraphEdge(object):
         else:
             raise ValueError
 
+
 class DirectedGraphEdge(GraphEdge):
 
     """
@@ -215,7 +218,8 @@ class DirectedGraphEdge(GraphEdge):
         @param v1: The second vertex of the edge.
         @type: L{GraphVertex}
         """
-        super(DirectedGraphEdge, self).__init__(graph, head_vertex, tail_vertex)
+        super(DirectedGraphEdge, self).__init__(
+            graph, head_vertex, tail_vertex)
         self.directed = True
 
     def __eq__(self, other):
@@ -242,6 +246,7 @@ class DirectedGraphEdge(GraphEdge):
         """
         return self.directed
 
+
 class DirectedWeightedGraphEdge(DirectedGraphEdge):
 
     """
@@ -260,7 +265,8 @@ class DirectedWeightedGraphEdge(DirectedGraphEdge):
         @param v1: The second vertex of the edge.
         @type: L{GraphVertex}
         """
-        super(DirectedWeightedGraphEdge, self).__init__(graph, head_vertex, tail_vertex)
+        super(DirectedWeightedGraphEdge, self).__init__(
+            graph, head_vertex, tail_vertex)
         self.weighted = True
         self.weight = weight
 
@@ -426,6 +432,7 @@ class DirectedWeightedGraphEdge(DirectedGraphEdge):
         """
         return self.weight
 
+
 class DirectedUnWeightedGraphEdge(DirectedGraphEdge):
 
     """
@@ -444,7 +451,8 @@ class DirectedUnWeightedGraphEdge(DirectedGraphEdge):
         @param v1: The second vertex of the edge.
         @type: L{GraphVertex}
         """
-        super(DirectedUnWeightedGraphEdge, self).__init__(graph, head_vertex, tail_vertex)
+        super(DirectedUnWeightedGraphEdge, self).__init__(
+            graph, head_vertex, tail_vertex)
         self.weighted = False
 
     def is_weighted(self):
@@ -456,6 +464,7 @@ class DirectedUnWeightedGraphEdge(DirectedGraphEdge):
         @rtype: C{bool}
         """
         return self.weighted
+
 
 class UnDirectedGraphEdge(GraphEdge):
 
@@ -476,7 +485,8 @@ class UnDirectedGraphEdge(GraphEdge):
         @param v1: The second vertex of the edge.
         @type: L{GraphVertex}
         """
-        super(UnDirectedGraphEdge, self).__init__(graph, head_vertex, tail_vertex)
+        super(UnDirectedGraphEdge, self).__init__(
+            graph, head_vertex, tail_vertex)
         self.directed = False
 
     def is_directed(self):
@@ -487,6 +497,7 @@ class UnDirectedGraphEdge(GraphEdge):
         @rtype: C{bool}
         """
         return self.directed
+
 
 class UnDirectedWeightedGraphEdge(UnDirectedGraphEdge):
 
@@ -508,7 +519,8 @@ class UnDirectedWeightedGraphEdge(UnDirectedGraphEdge):
         @type: L{GraphVertex}
         @param weight: The weight of the edge.
         """
-        super(UnDirectedWeightedGraphEdge, self).__init__(graph, head_vertex, tail_vertex)
+        super(UnDirectedWeightedGraphEdge, self).__init__(
+            graph, head_vertex, tail_vertex)
         self.weight = weight
 
     def __repr__(self):
@@ -663,6 +675,7 @@ class UnDirectedWeightedGraphEdge(UnDirectedGraphEdge):
         """
         return self.weight
 
+
 class UnDirectedUnWeightedGraphEdge(UnDirectedGraphEdge):
 
     """
@@ -681,7 +694,8 @@ class UnDirectedUnWeightedGraphEdge(UnDirectedGraphEdge):
         @param v1: The second vertex of the edge.
         @type: L{GraphVertex}
         """
-        super(UnDirectedUnWeightedGraphEdge, self).__init__(graph, head_vertex, tail_vertex)
+        super(UnDirectedUnWeightedGraphEdge, self).__init__(
+            graph, head_vertex, tail_vertex)
         self.weighted = False
 
     def is_weighted(self):
@@ -694,6 +708,7 @@ class UnDirectedUnWeightedGraphEdge(UnDirectedGraphEdge):
         """
         return self.weighted
 
+
 class EdgeClassification(object):
 
     """
@@ -704,5 +719,3 @@ class EdgeClassification(object):
     BACK_EDGE = "Back"
     FORWARD_EDGE = "Forward"
     CROSS_EDGE = "Cross"
-
-

@@ -8,6 +8,7 @@ import unittest
 
 from py_alg_dat import stack
 
+
 class TestStack(unittest.TestCase):
 
     """

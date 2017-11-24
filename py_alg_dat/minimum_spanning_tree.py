@@ -35,6 +35,7 @@ __maintainer__ = "Brian Horn"
 __email__ = "trycatchhorn@gmail.com"
 __status__ = "Prototype"
 
+
 class MinimumSpanningTree(object):
 
     """
@@ -59,7 +60,8 @@ class MinimumSpanningTree(object):
         """
 
         class_name_str = str(self.__class__.__name__) + ": ("
-        attributes_str = "Edges: " + str(self.edges) + ",  Weight: " + str(self.totalweight) + ")"
+        attributes_str = "Edges: " + \
+            str(self.edges) + ",  Weight: " + str(self.totalweight) + ")"
         str_rep = class_name_str + attributes_str
         return str_rep
 
@@ -118,4 +120,3 @@ class MinimumSpanningTree(object):
         """
         self.edges.append(edge)
         self.totalweight += edge.get_weight()
-

@@ -44,6 +44,7 @@ from py_alg_dat.min_heap import MinHeap
 from py_alg_dat.minimum_spanning_tree import MinimumSpanningTree
 from py_alg_dat.partition import Partition
 
+
 class GraphAlgorithms(object):
 
     """
@@ -109,7 +110,8 @@ class GraphAlgorithms(object):
                         table[entry2].distance = edge.get_weight()
                         table[entry2].predecessor = vertex
                         table[entry2].edge = edge
-                        queue.insert(Association(edge.get_weight(), vertex_mate))
+                        queue.insert(Association(
+                            edge.get_weight(), vertex_mate))
 
         mst = MinimumSpanningTree(graph)
         for i in xrange(number_of_vertices):
@@ -117,7 +119,8 @@ class GraphAlgorithms(object):
                 vertex_u = graph[i]
                 vertex_v = table[i].predecessor
                 weight = table[i].distance
-                edge = UnDirectedWeightedGraphEdge(graph, vertex_u, vertex_v, weight)
+                edge = UnDirectedWeightedGraphEdge(
+                    graph, vertex_u, vertex_v, weight)
                 mst.add_edge(edge)
         return mst
 
@@ -165,7 +168,8 @@ class GraphAlgorithms(object):
                 vertex_u = edge.head_vertex
                 vertex_v = edge.tail_vertex
                 weight = edge.get_weight()
-                edge_v_u = UnDirectedWeightedGraphEdge(graph, vertex_u, vertex_v, weight)
+                edge_v_u = UnDirectedWeightedGraphEdge(
+                    graph, vertex_u, vertex_v, weight)
                 mst.add_edge(edge_v_u)
         return mst
 
@@ -221,7 +225,8 @@ class GraphAlgorithms(object):
                 table[vertex_one.vertex_number].discovered = True
                 for edge in vertex_one.get_emanating_edges():
                     vertex_two = edge.get_mate(vertex_one)
-                    path_distance = table[vertex_one.vertex_number].distance + edge.get_weight()
+                    path_distance = table[vertex_one.vertex_number].distance + \
+                        edge.get_weight()
                     if table[vertex_two.vertex_number].distance > path_distance:
                         table[vertex_two.vertex_number].distance = path_distance
                         table[vertex_two.vertex_number].predecessor = vertex_one
@@ -319,5 +324,3 @@ class GraphAlgorithms(object):
                 has_cycle = True
 
         return has_cycle, distances
-
-

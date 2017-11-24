@@ -11,6 +11,7 @@ from py_alg_dat import graph
 from py_alg_dat import graph_edge
 from py_alg_dat import graph_vertex
 
+
 class TestDirectedWeightedGraph(unittest.TestCase):
 
     """
@@ -33,18 +34,28 @@ class TestDirectedWeightedGraph(unittest.TestCase):
         self.graph1.add_vertex(self.v4_g1)
         self.graph1.add_vertex(self.v5_g1)
 
-        self.e12 = graph_edge.DirectedWeightedGraphEdge(self.graph1, self.v1_g1, self.v2_g1, 10)
-        self.e14 = graph_edge.DirectedWeightedGraphEdge(self.graph1, self.v1_g1, self.v4_g1, 5)
-        self.e23 = graph_edge.DirectedWeightedGraphEdge(self.graph1, self.v2_g1, self.v3_g1, 1)
-        self.e24 = graph_edge.DirectedWeightedGraphEdge(self.graph1, self.v2_g1, self.v4_g1, 2)
-        self.e35 = graph_edge.DirectedWeightedGraphEdge(self.graph1, self.v3_g1, self.v5_g1, 4)
-        self.e42 = graph_edge.DirectedWeightedGraphEdge(self.graph1, self.v4_g1, self.v2_g1, 3)
-        self.e43 = graph_edge.DirectedWeightedGraphEdge(self.graph1, self.v4_g1, self.v3_g1, 9)
-        self.e45 = graph_edge.DirectedWeightedGraphEdge(self.graph1, self.v4_g1, self.v5_g1, 2)
-        self.e53 = graph_edge.DirectedWeightedGraphEdge(self.graph1, self.v5_g1, self.v3_g1, 6)
-        self.e51 = graph_edge.DirectedWeightedGraphEdge(self.graph1, self.v5_g1, self.v1_g1, 7)
+        self.e12 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph1, self.v1_g1, self.v2_g1, 10)
+        self.e14 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph1, self.v1_g1, self.v4_g1, 5)
+        self.e23 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph1, self.v2_g1, self.v3_g1, 1)
+        self.e24 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph1, self.v2_g1, self.v4_g1, 2)
+        self.e35 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph1, self.v3_g1, self.v5_g1, 4)
+        self.e42 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph1, self.v4_g1, self.v2_g1, 3)
+        self.e43 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph1, self.v4_g1, self.v3_g1, 9)
+        self.e45 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph1, self.v4_g1, self.v5_g1, 2)
+        self.e53 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph1, self.v5_g1, self.v3_g1, 6)
+        self.e51 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph1, self.v5_g1, self.v1_g1, 7)
 
-        self.graph1.add_edge(self.v1_g1, self.v2_g1, 10) # (S -> T, 10)
+        self.graph1.add_edge(self.v1_g1, self.v2_g1, 10)  # (S -> T, 10)
         self.graph1.add_edge(self.v1_g1, self.v4_g1, 5)  # (S -> Y, 5)
         self.graph1.add_edge(self.v2_g1, self.v3_g1, 1)  # (T -> X, 1)
         self.graph1.add_edge(self.v2_g1, self.v4_g1, 2)  # (T -> Y, 2)
@@ -78,35 +89,49 @@ class TestDirectedWeightedGraph(unittest.TestCase):
         self.graph2.add_vertex(self.v7_g2)
         self.graph2.add_vertex(self.v8_g2)
 
-        self.e01_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v0_g2, self.v1_g2, 10)
-        self.e02_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v0_g2, self.v2_g2, 11)
-        self.e04_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v0_g2, self.v4_g2, 12)
-        self.e13_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v1_g2, self.v3_g2, 13)
-        self.e14_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v1_g2, self.v4_g2, 14)
-        self.e27_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v2_g2, self.v7_g2, 15)
-        self.e25_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v2_g2, self.v5_g2, 16)
-        self.e36_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v3_g2, self.v6_g2, 17)
-        self.e46_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v4_g2, self.v6_g2, 18)
-        self.e48_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v4_g2, self.v8_g2, 19)
-        self.e47_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v4_g2, self.v7_g2, 20)
-        self.e57_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v5_g2, self.v7_g2, 21)
-        self.e68_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v6_g2, self.v8_g2, 22)
-        self.e78_g2 = graph_edge.DirectedWeightedGraphEdge(self.graph2, self.v7_g2, self.v8_g2, 23)
+        self.e01_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v0_g2, self.v1_g2, 10)
+        self.e02_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v0_g2, self.v2_g2, 11)
+        self.e04_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v0_g2, self.v4_g2, 12)
+        self.e13_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v1_g2, self.v3_g2, 13)
+        self.e14_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v1_g2, self.v4_g2, 14)
+        self.e27_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v2_g2, self.v7_g2, 15)
+        self.e25_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v2_g2, self.v5_g2, 16)
+        self.e36_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v3_g2, self.v6_g2, 17)
+        self.e46_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v4_g2, self.v6_g2, 18)
+        self.e48_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v4_g2, self.v8_g2, 19)
+        self.e47_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v4_g2, self.v7_g2, 20)
+        self.e57_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v5_g2, self.v7_g2, 21)
+        self.e68_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v6_g2, self.v8_g2, 22)
+        self.e78_g2 = graph_edge.DirectedWeightedGraphEdge(
+            self.graph2, self.v7_g2, self.v8_g2, 23)
 
-        self.graph2.add_edge(self.v0_g2, self.v1_g2, 10) # a -> b
-        self.graph2.add_edge(self.v0_g2, self.v2_g2, 11) # a -> c
-        self.graph2.add_edge(self.v0_g2, self.v4_g2, 12) # a -> e
-        self.graph2.add_edge(self.v1_g2, self.v3_g2, 13) # b -> d
-        self.graph2.add_edge(self.v1_g2, self.v4_g2, 14) # b -> e
-        self.graph2.add_edge(self.v2_g2, self.v7_g2, 15) # c -> h
-        self.graph2.add_edge(self.v2_g2, self.v5_g2, 16) # c -> f
-        self.graph2.add_edge(self.v3_g2, self.v6_g2, 17) # d -> g
-        self.graph2.add_edge(self.v4_g2, self.v6_g2, 18) # e -> g
-        self.graph2.add_edge(self.v4_g2, self.v8_g2, 19) # e -> i
-        self.graph2.add_edge(self.v4_g2, self.v7_g2, 20) # e -> h
-        self.graph2.add_edge(self.v5_g2, self.v7_g2, 21) # f -> h
-        self.graph2.add_edge(self.v6_g2, self.v8_g2, 22) # g -> i
-        self.graph2.add_edge(self.v7_g2, self.v8_g2, 24) # h -> i
+        self.graph2.add_edge(self.v0_g2, self.v1_g2, 10)  # a -> b
+        self.graph2.add_edge(self.v0_g2, self.v2_g2, 11)  # a -> c
+        self.graph2.add_edge(self.v0_g2, self.v4_g2, 12)  # a -> e
+        self.graph2.add_edge(self.v1_g2, self.v3_g2, 13)  # b -> d
+        self.graph2.add_edge(self.v1_g2, self.v4_g2, 14)  # b -> e
+        self.graph2.add_edge(self.v2_g2, self.v7_g2, 15)  # c -> h
+        self.graph2.add_edge(self.v2_g2, self.v5_g2, 16)  # c -> f
+        self.graph2.add_edge(self.v3_g2, self.v6_g2, 17)  # d -> g
+        self.graph2.add_edge(self.v4_g2, self.v6_g2, 18)  # e -> g
+        self.graph2.add_edge(self.v4_g2, self.v8_g2, 19)  # e -> i
+        self.graph2.add_edge(self.v4_g2, self.v7_g2, 20)  # e -> h
+        self.graph2.add_edge(self.v5_g2, self.v7_g2, 21)  # f -> h
+        self.graph2.add_edge(self.v6_g2, self.v8_g2, 22)  # g -> i
+        self.graph2.add_edge(self.v7_g2, self.v8_g2, 24)  # h -> i
 
     def test_directed_weighted_graph_copy(self):
         """
@@ -201,15 +226,18 @@ class TestDirectedWeightedGraph(unittest.TestCase):
         for i in self.graph1.get_edges():
             tmp2.append(i)
 
-        s_list1 = sorted(tmp1, key=lambda edge: (edge.head_vertex, edge.tail_vertex, edge.weight))
-        s_list2 = sorted(tmp2, key=lambda edge: (edge.head_vertex, edge.tail_vertex, edge.weight))
+        s_list1 = sorted(tmp1, key=lambda edge: (
+            edge.head_vertex, edge.tail_vertex, edge.weight))
+        s_list2 = sorted(tmp2, key=lambda edge: (
+            edge.head_vertex, edge.tail_vertex, edge.weight))
         self.assertEqual(s_list1, s_list2)
 
     def test_directed_weighted_graph_get_edge(self):
         """
         Test method "get_edge".
         """
-        self.assertEqual(self.e12, self.graph1.get_edge(self.v1_g1, self.v2_g1))
+        self.assertEqual(self.e12, self.graph1.get_edge(
+            self.v1_g1, self.v2_g1))
 
     def test_directed_weighted_graph_is_edge(self):
         """
@@ -646,10 +674,14 @@ class TestDirectedWeightedGraph(unittest.TestCase):
         a_graph.add_edge(vertex3, vertex1, 30)
 
         res = a_graph.classify_edges().get_edges()
-        ref = dfs_edge_classification.DFSEdgeClassification(a_graph).get_edges()
-        e12 = graph_edge.DirectedWeightedGraphEdge(a_graph, vertex1, vertex2, 10)
-        e23 = graph_edge.DirectedWeightedGraphEdge(a_graph, vertex2, vertex3, 20)
-        e31 = graph_edge.DirectedWeightedGraphEdge(a_graph, vertex3, vertex1, 30)
+        ref = dfs_edge_classification.DFSEdgeClassification(
+            a_graph).get_edges()
+        e12 = graph_edge.DirectedWeightedGraphEdge(
+            a_graph, vertex1, vertex2, 10)
+        e23 = graph_edge.DirectedWeightedGraphEdge(
+            a_graph, vertex2, vertex3, 20)
+        e31 = graph_edge.DirectedWeightedGraphEdge(
+            a_graph, vertex3, vertex1, 30)
         ref[e12] = graph_edge.EdgeClassification.TREE_EDGE
         ref[e23] = graph_edge.EdgeClassification.TREE_EDGE
         ref[e31] = graph_edge.EdgeClassification.BACK_EDGE
@@ -677,12 +709,15 @@ class TestDirectedWeightedGraph(unittest.TestCase):
         a_graph.add_edge(vertex2, vertex4, 30)
 
         res = a_graph.classify_edges().get_edges()
-        ref = dfs_edge_classification.DFSEdgeClassification(a_graph).get_edges()
-        e12 = graph_edge.DirectedWeightedGraphEdge(a_graph, vertex1, vertex2, 10)
-        e23 = graph_edge.DirectedWeightedGraphEdge(a_graph, vertex2, vertex3, 20)
-        e24 = graph_edge.DirectedWeightedGraphEdge(a_graph, vertex2, vertex4, 30)
+        ref = dfs_edge_classification.DFSEdgeClassification(
+            a_graph).get_edges()
+        e12 = graph_edge.DirectedWeightedGraphEdge(
+            a_graph, vertex1, vertex2, 10)
+        e23 = graph_edge.DirectedWeightedGraphEdge(
+            a_graph, vertex2, vertex3, 20)
+        e24 = graph_edge.DirectedWeightedGraphEdge(
+            a_graph, vertex2, vertex4, 30)
         ref[e12] = graph_edge.EdgeClassification.TREE_EDGE
         ref[e23] = graph_edge.EdgeClassification.TREE_EDGE
         ref[e24] = graph_edge.EdgeClassification.TREE_EDGE
         self.assertEqual(res, ref)
-

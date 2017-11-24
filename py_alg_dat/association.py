@@ -35,6 +35,7 @@ __maintainer__ = "Brian Horn"
 __email__ = "trycatchhorn@gmail.com"
 __status__ = "Prototype"
 
+
 class Association(object):
 
     """
@@ -77,7 +78,8 @@ class Association(object):
         """
 
         class_name = str(self.__class__.__name__) + ": ("
-        association_str = class_name + str(self.tuple[0]) + ", " + str(self.tuple[1]) + ")"
+        association_str = class_name + \
+            str(self.tuple[0]) + ", " + str(self.tuple[1]) + ")"
         return association_str
 
     def __hash__(self):
@@ -186,6 +188,3 @@ class Association(object):
         @rtype: C{object}
         """
         return self.tuple[1]
-
-
-

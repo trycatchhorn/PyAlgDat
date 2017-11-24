@@ -37,6 +37,7 @@ __status__ = "Prototype"
 
 from py_alg_dat.iterator import Iterator
 
+
 class LinkedListIterator(Iterator):
 
     """

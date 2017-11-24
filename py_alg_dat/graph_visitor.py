@@ -37,6 +37,7 @@ __status__ = "Prototype"
 
 from py_alg_dat.string_visitor import StringVisitor
 
+
 class GraphVisitor(StringVisitor):
 
     """
@@ -61,5 +62,3 @@ class GraphVisitor(StringVisitor):
         self.string = self.string + str(v) + "\n"
         for edge in v.get_emanating_edges():
             self.string = self.string + "    " + str(edge) + "\n"
-
-

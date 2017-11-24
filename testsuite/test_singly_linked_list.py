@@ -9,6 +9,7 @@ import unittest
 
 from py_alg_dat import singly_linked_list
 
+
 class TestSinglyLinkedList(unittest.TestCase):
 
     """
@@ -88,7 +89,7 @@ class TestSinglyLinkedList(unittest.TestCase):
 
         test1 = a_list.get_head() == a_list[0]
         test2 = a_list.get_tail() == a_list[0]
-        test3 = a_list[0].get_next() == None
+        test3 = a_list[0].get_next() is None
         test4 = len(a_list) == 1
         test = test1 and test2 and test3 and test4
         self.assertTrue(test)
@@ -154,7 +155,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         t_4 = a_list[1].get_next() == a_list[2]
         t_5 = a_list[2].get_next() == a_list[3]
         t_6 = a_list[3].get_next() == a_list[4]
-        t_7 = a_list[4].get_next() == None
+        t_7 = a_list[4].get_next() is None
         t_8 = len(a_list) == 5
         t_9 = ref == res
         test = t_1 and t_2 and t_3 and t_4 and t_5 and t_6 and t_7 and t_8 and t_9
@@ -172,7 +173,7 @@ class TestSinglyLinkedList(unittest.TestCase):
 
         test1 = a_list.get_head() == a_list[0]
         test2 = a_list.get_tail() == a_list[0]
-        test3 = a_list[0].get_next() == None
+        test3 = a_list[0].get_next() is None
         test4 = len(a_list) == 1
         test = test1 and test2 and test3 and test4
         self.assertTrue(test)
@@ -207,7 +208,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         t_1 = a_list.get_head() == a_list[0]
         t_2 = a_list.get_tail() == a_list[1]
         t_3 = a_list[0].get_next() == a_list[1]
-        t_4 = a_list[1].get_next() == None
+        t_4 = a_list[1].get_next() is None
         t_5 = len(a_list) == 2
         t_6 = ref == res
         test = t_1 and t_2 and t_3 and t_4 and t_5 and t_6
@@ -295,7 +296,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         t_3 = a_list[0].get_next() == a_list[1]
         t_4 = a_list[1].get_next() == a_list[2]
         t_5 = a_list[2].get_next() == a_list[3]
-        t_6 = a_list[3].get_next() == None
+        t_6 = a_list[3].get_next() is None
         t_7 = len(a_list) == 4
         t_8 = ref == res
         test = t_1 and t_2 and t_3 and t_4 and t_5 and t_6 and t_7 and t_8
@@ -332,7 +333,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         t_1 = a_list.get_head() == a_list[0]
         t_2 = a_list.get_tail() == a_list[1]
         t_3 = a_list[0].get_next() == a_list[1]
-        t_4 = a_list[1].get_next() == None
+        t_4 = a_list[1].get_next() is None
         t_5 = len(a_list) == 2
         t_6 = ref == res
         test = t_1 and t_2 and t_3 and t_4 and t_5 and t_6
@@ -374,7 +375,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         t_2 = a_list.get_tail() == a_list[2]
         t_3 = a_list[0].get_next() == a_list[1]
         t_4 = a_list[1].get_next() == a_list[2]
-        t_5 = a_list[2].get_next() == None
+        t_5 = a_list[2].get_next() is None
         t_6 = len(a_list) == 3
         t_7 = ref == res
         test = t_1 and t_2 and t_3 and t_4 and t_5 and t_6 and t_7
@@ -479,7 +480,7 @@ class TestSinglyLinkedList(unittest.TestCase):
 
         t_1 = a_list.get_head() == a_list[0]
         t_2 = a_list.get_tail() == a_list[0]
-        t_3 = elem1.get_next() == None
+        t_3 = elem1.get_next() is None
         t_4 = len(a_list) == 1
         t_5 = ref == res
         test = t_1 and t_2 and t_3 and t_4 and t_5
@@ -529,7 +530,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         t_3 = a_list[0].get_next() == a_list[1]
         t_4 = a_list[1].get_next() == a_list[2]
         t_5 = a_list[2].get_next() == a_list[3]
-        t_6 = a_list[3].get_next() == None
+        t_6 = a_list[3].get_next() is None
         t_7 = len(a_list) == 4
         t_8 = ref == res
         test = t_1 and t_2 and t_3 and t_4 and t_5 and t_6 and t_7 and t_8
@@ -579,7 +580,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         t_3 = a_list[0].get_next() == a_list[1]
         t_4 = a_list[1].get_next() == a_list[2]
         t_5 = a_list[2].get_next() == a_list[3]
-        t_6 = a_list[3].get_next() == None
+        t_6 = a_list[3].get_next() is None
         t_7 = len(a_list) == 4
         t_8 = ref == res
         test = t_1 and t_2 and t_3 and t_4 and t_5 and t_6 and t_7 and t_8
@@ -619,7 +620,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         t_1 = a_list.get_head() == a_list[0]
         t_2 = a_list.get_tail() == a_list[1]
         t_3 = a_list[0].get_next() == a_list[1]
-        t_4 = a_list[1].get_next() == None
+        t_4 = a_list[1].get_next() is None
         t_5 = len(a_list) == 2
         t_6 = ref == res
         test = t_1 and t_2 and t_3 and t_4 and t_5 and t_6
@@ -718,7 +719,8 @@ class TestSinglyLinkedList(unittest.TestCase):
         """
         Test operator "get_item".
         """
-        elem = singly_linked_list.SinglyLinkedListElement(self.list1, 'b', None)
+        elem = singly_linked_list.SinglyLinkedListElement(
+            self.list1, 'b', None)
         self.assertEqual(elem, self.list1[0])
 
     def test_singly_linked_list_get_item_raise(self):
@@ -864,4 +866,3 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.assertEqual('c', self.list1.get_last())
 
     ### End test of class SinglyLinkedList ###
-

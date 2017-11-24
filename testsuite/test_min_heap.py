@@ -8,6 +8,7 @@ import unittest
 
 from py_alg_dat import min_heap
 
+
 class TestMinHeap(unittest.TestCase):
 
     """
@@ -273,4 +274,3 @@ class TestMinHeap(unittest.TestCase):
         test2 = heap.is_min_heap()
         test = test1 and test2
         self.assertTrue(test)
-

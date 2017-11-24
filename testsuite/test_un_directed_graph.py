@@ -11,6 +11,7 @@ from py_alg_dat import graph
 from py_alg_dat import graph_edge
 from py_alg_dat import graph_vertex
 
+
 class TestUnDirectedGraph(unittest.TestCase):
 
     """
@@ -178,8 +179,10 @@ class TestUnDirectedGraph(unittest.TestCase):
         for i in self.g_1.get_edges():
             list2.append(i)
 
-        s_list1 = sorted(list1, key=lambda edge: (edge.head_vertex, edge.tail_vertex))
-        s_list2 = sorted(list2, key=lambda edge: (edge.head_vertex, edge.tail_vertex))
+        s_list1 = sorted(list1, key=lambda edge: (
+            edge.head_vertex, edge.tail_vertex))
+        s_list2 = sorted(list2, key=lambda edge: (
+            edge.head_vertex, edge.tail_vertex))
         self.assertEqual(s_list1, s_list2)
 
     def test_un_directed_graph_get_edge(self):
@@ -629,7 +632,8 @@ class TestUnDirectedGraph(unittest.TestCase):
         a_graph.add_edge(v_1, v_3)
 
         res = a_graph.classify_edges().get_edges()
-        ref = dfs_edge_classification.DFSEdgeClassification(a_graph).get_edges()
+        ref = dfs_edge_classification.DFSEdgeClassification(
+            a_graph).get_edges()
         e12 = graph_edge.UnDirectedGraphEdge(a_graph, v_1, v_2)
         e23 = graph_edge.UnDirectedGraphEdge(a_graph, v_2, v_3)
         e13 = graph_edge.UnDirectedGraphEdge(a_graph, v_3, v_1)
@@ -659,7 +663,8 @@ class TestUnDirectedGraph(unittest.TestCase):
         a_graph.add_edge(v_2, v_4)
 
         res = a_graph.classify_edges().get_edges()
-        ref = dfs_edge_classification.DFSEdgeClassification(a_graph).get_edges()
+        ref = dfs_edge_classification.DFSEdgeClassification(
+            a_graph).get_edges()
         e12 = graph_edge.UnDirectedGraphEdge(a_graph, v_1, v_2)
         e23 = graph_edge.UnDirectedGraphEdge(a_graph, v_2, v_3)
         e24 = graph_edge.UnDirectedGraphEdge(a_graph, v_2, v_4)
@@ -667,4 +672,3 @@ class TestUnDirectedGraph(unittest.TestCase):
         ref[e23] = graph_edge.EdgeClassification.TREE_EDGE
         ref[e24] = graph_edge.EdgeClassification.TREE_EDGE
         self.assertEqual(res, ref)
-
