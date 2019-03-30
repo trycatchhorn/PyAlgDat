@@ -1,3 +1,4 @@
+py_alg_dat.code-workspace
 py_alg_dat/*.pyc
 py_alg_dat/__pycache__
 testsuite/__pycache__
