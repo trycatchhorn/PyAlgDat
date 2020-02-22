@@ -52,6 +52,7 @@ from py_alg_dat.graph_edge import UnDirectedUnWeightedGraphEdge
 from py_alg_dat.graph_edge import UnDirectedWeightedGraphEdge
 from py_alg_dat.graph_visitor import GraphVisitor
 from py_alg_dat.queue import Queue
+from py_alg_dat.singly_linked_list import SinglyLinkedList
 from py_alg_dat.stack import Stack
 from py_alg_dat.visitor import Visitor
 from py_alg_dat.vertex_visitor import VertexVisitor
@@ -63,13 +64,16 @@ class Graph(Container):
     The interface of a graph data structure.
     """
 
-    def __init__(self, size):
+    def __init__(self, size, list_type=DoublyLinkedList()):
         """
         Constructs a graph with the number of vertices specified by
         the size parameter.
 
         @param size: The number of vertices contained in this graph.
         @type: C{int}
+
+        @param list_type: The type of list representing the adjacency list
+        @type: C{DoublyLinkedList or SinglyLinkedList}
         """
         super(Graph, self).__init__()
         self.size = size
@@ -79,10 +83,10 @@ class Graph(Container):
             # NOTE: the SinglyLinkedList and the DoublyLikedList classes
             # have the same interface, therefore it should be possible to
             # toggle between these and still pass all unit tests.
-
-            #from py_alg_dat.singly_linked_list import SinglyLinkedList
-            #self.adjacency_list[i] = SinglyLinkedList()
-            self.adjacency_list[i] = DoublyLinkedList()
+            if isinstance(list_type, DoublyLinkedList):
+                self.adjacency_list[i] = DoublyLinkedList()
+            else:
+                self.adjacency_list[i] = SinglyLinkedList()
 
     def __str__(self):
         """
