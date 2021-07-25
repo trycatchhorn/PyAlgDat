@@ -136,7 +136,7 @@ class BinaryHeap(object):
         @return: The parent index of the node i.
         @rtype: C{int}
         """
-        return (i - 1) / 2
+        return (i - 1) // 2
 
     @staticmethod
     def left_child(i):
@@ -171,7 +171,7 @@ class BinaryHeap(object):
         @return: True if the key at index i is a leaf, false otherwise.
         @rtype: C{bool}
         """
-        return i < len(self.array) and i >= len(self.array) / 2
+        return i < len(self.array) and i >= len(self.array) // 2
 
     def swap(self, index_a, index_b):
         """

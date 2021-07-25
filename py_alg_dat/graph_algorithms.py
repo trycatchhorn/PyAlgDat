@@ -93,7 +93,7 @@ class GraphAlgorithms(object):
         """
         number_of_vertices = graph.get_number_of_vertices()
         table = ArrayList(number_of_vertices)
-        for i in xrange(number_of_vertices):
+        for i in range(number_of_vertices):
             table[i] = Entry()
         table[start.vertex_number].distance = 0
         queue = MinHeap()
@@ -114,7 +114,7 @@ class GraphAlgorithms(object):
                             edge.get_weight(), vertex_mate))
 
         mst = MinimumSpanningTree(graph)
-        for i in xrange(number_of_vertices):
+        for i in range(number_of_vertices):
             if i != start.vertex_number:
                 vertex_u = graph[i]
                 vertex_v = table[i].predecessor
@@ -213,7 +213,7 @@ class GraphAlgorithms(object):
         """
         number_of_vertices = graph.get_number_of_vertices()
         table = ArrayList(number_of_vertices)
-        for i in xrange(number_of_vertices):
+        for i in range(number_of_vertices):
             table[i] = Entry()
         table[source.vertex_number].distance = 0
         queue = MinHeap()
@@ -308,7 +308,7 @@ class GraphAlgorithms(object):
             else:
                 distances[vertex] = float('inf')
 
-        for _ in xrange(1, graph.get_number_of_vertices()):
+        for _ in range(1, graph.get_number_of_vertices()):
             for edge in graph.get_edges():
                 vertex_u = edge.get_head_vertex()
                 vertex_v = edge.get_tail_vertex()

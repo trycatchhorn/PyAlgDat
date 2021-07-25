@@ -54,7 +54,7 @@ class GraphVertex(object):
         self.graph = graph
         self.vertex_name = vertex_name
         self.vertex_number = -1
-        for i in xrange(len(graph.vertices)):
+        for i in range(len(graph.vertices)):
             if graph.vertices[i] is None:
                 self.vertex_number = i
                 return

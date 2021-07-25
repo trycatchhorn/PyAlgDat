@@ -68,4 +68,4 @@ if __name__ == "__main__":
     GRAPH = create_graph()
     # Run Kruskal's algorithm
     MST = GraphAlgorithms.kruskals_algorithm(GRAPH)
-    print MST
+    print(MST)

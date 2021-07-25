@@ -68,4 +68,4 @@ if __name__ == "__main__":
     GRAPH = create_graph()
     # Run Prim's algorithm
     MST = GraphAlgorithms.prims_algorithm(GRAPH, GRAPH[0])
-    print MST
+    print(MST)

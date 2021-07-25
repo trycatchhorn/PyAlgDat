@@ -54,7 +54,7 @@ class LinkedListIterator(Iterator):
         super(LinkedListIterator, self).__init__(head)
         self.current = head
 
-    def next(self):
+    def __next__(self):
         """
         Returns the next element in the linked list.
 

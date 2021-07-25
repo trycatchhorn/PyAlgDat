@@ -114,7 +114,7 @@ class MaxHeap(BinaryHeap):
         @rtype: C{bool}
         """
         number_of_elements = len(self.array)
-        for i in xrange(number_of_elements):
+        for i in range(number_of_elements):
             left_index = self.left_child(i)
             right_index = self.right_child(i)
             if left_index < number_of_elements and self.array[left_index] > self.array[i]:
@@ -365,7 +365,7 @@ class MaxHeap(BinaryHeap):
         @param recursive: If True, the max-heap is build using recursion otherwise iteration.
         @type: C{int}
         """
-        for i in xrange(len(holder) / 2, -1, -1):
+        for i in range(len(holder) // 2, -1, -1):
             if recursive:
                 self.max_heapify_recursive(holder, i)
             else:
@@ -379,7 +379,7 @@ class MaxHeap(BinaryHeap):
         """
         self.build_max_heap(self.array)
         output = []
-        for i in xrange(len(self.array) - 1, 0, -1):
+        for i in range(len(self.array) - 1, 0, -1):
             self.array[0], self.array[i] = self.array[i], self.array[0]
             output.append(self.array.pop())
             self.max_heapify_recursive(self.array, 0)
@@ -416,7 +416,7 @@ class MaxHeap(BinaryHeap):
         @type: C{int}
         """
         if key < self.array[i]:
-            print "New key is smaller than current key!"
+            print("New key is smaller than current key!")
             return
         self.array[i] = key
         while i > 0 and self.array[self.parent(i)] < self.array[i]:
@@ -435,7 +435,7 @@ class MaxHeap(BinaryHeap):
         @param value: The value by which the key should be increased.
         @type: C{int}
         """
-        for i in xrange(len(self.array)):
+        for i in range(len(self.array)):
             if self.array[i] == key:
                 self.array[i] += value
                 self.propagate_up(i)

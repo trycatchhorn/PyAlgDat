@@ -72,7 +72,7 @@ class TestStack(unittest.TestCase):
         """
         Test method "is_empty".
         """
-        self.assertEquals(False, self.stack1.is_empty())
+        self.assertEqual(False, self.stack1.is_empty())
 
     def test_stack_clear(self):
         """

@@ -37,29 +37,29 @@ class TestQueue(unittest.TestCase):
         """
         Test operator "len".
         """
-        self.assertEquals(5, len(self.queue1))
+        self.assertEqual(5, len(self.queue1))
 
     def test_queue_equal(self):
         """
         Test operator "equal".
         """
-        self.assertEquals(self.queue1, self.queue2)
+        self.assertEqual(self.queue1, self.queue2)
 
     def test_queue_not_equal(self):
         """
         Test operator "inequal".
         """
-        self.assertNotEquals(self.queue2, self.queue3)
+        self.assertNotEqual(self.queue2, self.queue3)
 
     def test_queue_is_empty(self):
         """
         Test method "is_empty".
         """
-        self.assertEquals(False, self.queue1.is_empty())
+        self.assertEqual(False, self.queue1.is_empty())
 
     def test_queue_clear(self):
         """
         Test method "clear".
         """
         self.queue1.clear()
-        self.assertEquals(0, len(self.queue1))
+        self.assertEqual(0, len(self.queue1))

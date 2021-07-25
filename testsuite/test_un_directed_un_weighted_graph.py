@@ -274,7 +274,7 @@ class TestUnDirectedUnWeightedGraph(unittest.TestCase):
         try:
             self.assertTrue(self.g_1.is_edge(self.v_1, self.v_2))
         except KeyError:
-            print "Exception caught: %s" % str(KeyError)
+            print("Exception caught: %s" % str(KeyError))
 
     def test_un_directed_un_weighted_graph_remove_vertex_v_0(self):
         """

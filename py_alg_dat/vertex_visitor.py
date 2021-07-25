@@ -76,5 +76,4 @@ class VertexVisitor(Visitor):
         """
         Finishes the line.
         """
-        print ""
         self.comma = False

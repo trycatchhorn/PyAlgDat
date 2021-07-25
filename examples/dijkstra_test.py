@@ -88,11 +88,11 @@ if __name__ == "__main__":
     # Find the edges in the Spanning Tree and its total weight
     SPANNING_TREE_EDGES = set()
     SPANNING_TREE_WEIGHT = 0
-    for i in xrange(len(TABLE)):
+    for i in range(len(TABLE)):
         entry = TABLE[i]
         if entry.predecessor != None:
             edge = entry.edge
             SPANNING_TREE_EDGES.add(edge)
             SPANNING_TREE_WEIGHT += edge.get_weight()
-    print "Edges in Spanning Tree: " + str(SPANNING_TREE_EDGES)
-    print "Weight of Spanning Tree: " + str(SPANNING_TREE_WEIGHT)
+    print("Edges in Spanning Tree: " + str(SPANNING_TREE_EDGES))
+    print("Weight of Spanning Tree: " + str(SPANNING_TREE_WEIGHT))

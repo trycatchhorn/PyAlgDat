@@ -286,7 +286,7 @@ class TestDirectedGraph(unittest.TestCase):
         try:
             self.assertTrue(self.graph1.is_edge(self.v1_g1, self.v2_g1))
         except KeyError:
-            print "Exception caught: %s" % str(KeyError)
+            print("Exception caught: %s" % str(KeyError))
 
     def test_directed_graph_remove_vertex_v0(self):
         """

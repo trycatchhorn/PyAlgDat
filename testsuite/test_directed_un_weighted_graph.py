@@ -246,7 +246,7 @@ class TestDirectedUnWeightedGraph(unittest.TestCase):
         try:
             self.assertTrue(self.graph1.is_edge(self.v1_g1, self.v2_g1))
         except KeyError:
-            print "Exception caught: %s" % str(KeyError)
+            print("Exception caught: %s" % str(KeyError))
 
     def test_directed_un_weighted_graph_is_directed(self):
         """

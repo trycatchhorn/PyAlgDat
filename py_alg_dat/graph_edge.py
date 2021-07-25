@@ -237,6 +237,9 @@ class DirectedGraphEdge(GraphEdge):
             return self.head_vertex == other.head_vertex and self.tail_vertex == other.tail_vertex
         return NotImplemented
 
+    def __hash__(self):
+        return hash((self.head_vertex, self.tail_vertex, self.directed))
+
     def is_directed(self):
         """
         Returns if this edge is directed.

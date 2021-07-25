@@ -79,7 +79,7 @@ class Graph(Container):
         self.size = size
         self.vertices = ArrayList(size)
         self.adjacency_list = ArrayList(size)
-        for i in xrange(size):
+        for i in range(size):
             # NOTE: the SinglyLinkedList and the DoublyLikedList classes
             # have the same interface, therefore it should be possible to
             # toggle between these and still pass all unit tests.
@@ -190,7 +190,7 @@ class Graph(Container):
             result.size = self.size
             result.vertices = copy.copy(ArrayList(self.size))
             result.adjacency_list = copy.copy(ArrayList(self.size))
-            for i in xrange(self.size):
+            for i in range(self.size):
                 result.vertices[i] = copy.copy(self.vertices[i])
                 result.adjacency_list[i] = copy.copy(self.adjacency_list[i])
         return result
@@ -232,7 +232,7 @@ class Graph(Container):
         @type: L{Visitor}
         """
         assert isinstance(visitor, Visitor)
-        for i in xrange(len(self.vertices)):
+        for i in range(len(self.vertices)):
             visitor.visit(self.vertices[i])
 
     def add_vertex(self, vertex):
@@ -264,7 +264,7 @@ class Graph(Container):
         # Now the vertices in the graph might not be numbered correctly
         # according to their position. This is fixed by iterating
         # through the list of vertices and correcting the vertex numbers.
-        for i in xrange(vertex.get_vertex_number(), len(self.vertices)):
+        for i in range(vertex.get_vertex_number(), len(self.vertices)):
             self.vertices[i].vertex_number = i
         self.size = len(self.vertices)
 
@@ -402,8 +402,8 @@ class Graph(Container):
         @return: Generator enumerating the edges of the graph.
         @rtype: C{object}
         """
-        for i in xrange(len(self.adjacency_list)):
-            for j in xrange(len(self.adjacency_list[i])):
+        for i in range(len(self.adjacency_list)):
+            for j in range(len(self.adjacency_list[i])):
                 if self.adjacency_list[i][j] != None:
                     yield self.adjacency_list[i][j].data
 
@@ -605,7 +605,7 @@ class Graph(Container):
         assert isinstance(visitor, Visitor)
         number_of_vertices = self.get_number_of_vertices()
         enqueued = ArrayList(number_of_vertices)
-        for vertex in xrange(number_of_vertices):
+        for vertex in range(number_of_vertices):
             enqueued[vertex] = False
         queue = Queue()
         queue.enqueue(self[start])
@@ -632,7 +632,7 @@ class Graph(Container):
         assert isinstance(visitor, Visitor)
         number_of_vertices = self.get_number_of_vertices()
         visited = ArrayList(number_of_vertices)
-        for vertex in xrange(number_of_vertices):
+        for vertex in range(number_of_vertices):
             visited[vertex] = False
 
         visitor.visit(self[start])
@@ -766,12 +766,12 @@ class DirectedGraph(Graph):
         """
         number_of_vertices = self.get_number_of_vertices()
         in_degree = ArrayList(number_of_vertices)
-        for vertex in xrange(number_of_vertices):
+        for vertex in range(number_of_vertices):
             in_degree[vertex] = 0
         for edge in self.get_edges():
             in_degree[edge.tail_vertex.get_vertex_number()] += 1
         queue = Queue()
-        for vertex in xrange(number_of_vertices):
+        for vertex in range(number_of_vertices):
             if in_degree[vertex] == 0:
                 queue.enqueue(self[vertex])
         while not queue.is_empty():

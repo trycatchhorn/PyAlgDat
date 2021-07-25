@@ -67,4 +67,4 @@ if __name__ == "__main__":
     # Run Depth First traversal
     GRAPH.depth_first_traversal(VISITOR, 0)
     # Show result
-    print str("Depth First traversal: ") + str(VISITOR.get_visited())
+    print("Depth First traversal: " + str(VISITOR.get_visited()))

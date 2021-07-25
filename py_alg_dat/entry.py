@@ -50,7 +50,7 @@ class Entry(object):
         """
         if len(args) == 0:
             self.discovered = False
-            self.distance = sys.maxint
+            self.distance = sys.maxsize
             self.predecessor = None
             self.edge = None
         elif len(args) == 4:

@@ -86,4 +86,4 @@ if __name__ == "__main__":
     # Find shortest path from vertex vertex "A" to vertex "G"
     PATH = GraphAlgorithms.shortest_path(GRAPH, GRAPH[0], GRAPH[5])
     # Find the edges in the Spanning Tree and its total weight
-    print PATH
+    print(PATH)

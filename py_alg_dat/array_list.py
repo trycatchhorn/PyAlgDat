@@ -53,7 +53,7 @@ class ArrayList(object):
         @param baseIndex: The index where the list starts.
         @type baseIndex: C{int}
         """
-        self.data = [None for _ in xrange(length)]
+        self.data = [None for _ in range(length)]
         self.base_index = base_index
 
     def __repr__(self):
@@ -132,7 +132,7 @@ class ArrayList(object):
         @rtype: C{object}
         """
         if isinstance(index, slice):
-            return [self.data[i] for i in xrange(*index.indices(len(self.data)))]
+            return [self.data[i] for i in range(*index.indices(len(self.data)))]
         return self.data[self.get_offset(index)]
 
     def __setitem__(self, index, value):
@@ -216,9 +216,9 @@ class ArrayList(object):
         @type: C{int}
         """
         if len(self.data) != value:
-            new_data = [None for i in xrange(value)]
+            new_data = [None for i in range(value)]
             min_length = min(len(self.data), value)
-            for i in xrange(min_length):
+            for i in range(min_length):
                 new_data[i] = self.data[i]
             self.data = new_data
 
