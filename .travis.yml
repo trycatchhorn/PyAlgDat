@@ -1,6 +1,6 @@
 language: python
 python:
 - 3.7
-- pypy
+- pypy3
 sudo: false
 script: python setup.py test
